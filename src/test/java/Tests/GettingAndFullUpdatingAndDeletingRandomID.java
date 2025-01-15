@@ -51,7 +51,7 @@ public class GettingAndFullUpdatingAndDeletingRandomID extends GeneratingToken {
 	   System.out.println(getresponseText_random);
        Assert.assertEquals(apigetresponse_random.status() , 200);
         //Full Updating this Random User
-		 byte [] CompleteUpdatingUserReqBody = null;  //h3ml initialize ll array bytes
+		 byte [] CompleteUpdatingUserReqBody = null;  
          File file_completeupdateuser = new File(System.getProperty("user.dir") + "//src//test//java//resources//CreatingUserReqBody.json");
          CompleteUpdatingUserReqBody = Files.readAllBytes(file_completeupdateuser.toPath());
 		apiputresponse = requestContext.put(input.get("Url")+"/booking/"+String.valueOf(available_Id), requestOptions
@@ -67,9 +67,6 @@ public class GettingAndFullUpdatingAndDeletingRandomID extends GeneratingToken {
 		   JsonNode JSONPUTResponse = objectmapper.readTree( apiputresponse.body() );
 		   JsonNode BookingData_PUT = JSONPUTResponse.get("bookingdates");
 
-		   //Convert Object to Hashmap( 3shan a3rf a get value l Checkin mn l jsonfile
-		   //l moshkela n l value deh hwa Nested object 2ly hwa "bookingdates"
-		   //f 3shan keda 5adt l awal l bookingdates object w 7wlto l map lwa7do w d5alt gowah
 		   Object BookingDates = input.get("bookingdates");
 		    Map<String, Object> Actual_BookingDates = objectmapper
 		    	      .convertValue(BookingDates, new TypeReference<Map<String, Object>>() {});
