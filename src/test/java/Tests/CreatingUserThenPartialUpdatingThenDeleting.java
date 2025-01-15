@@ -38,7 +38,7 @@ public class CreatingUserThenPartialUpdatingThenDeleting extends GeneratingToken
 	@Test(dataProvider="UpdateBooking")
 	public void CreatingAndPartialUpdateThenDeleteUser(HashMap<String,Object> input) throws IOException
 	{
-		 byte [] CreatingUserReqBody = null;  //h3ml initialize ll array bytes
+		 byte [] CreatingUserReqBody = null;  
          File file_creatinguser = new File(System.getProperty("user.dir") + "//src//test//java//resources//CreatingUserReqBody.json");
          CreatingUserReqBody = Files.readAllBytes(file_creatinguser.toPath());
 
@@ -65,7 +65,7 @@ public class CreatingUserThenPartialUpdatingThenDeleting extends GeneratingToken
 	   Assert.assertEquals(booking.get("firstname").asText(), input.get("firstname"));
 	   
 	   //Partial Updating User
-		 byte [] PartialUpdatingUserReqBody = null;  //h3ml initialize ll array bytes
+		 byte [] PartialUpdatingUserReqBody = null; 
          File file_partialupdateuser = new File(System.getProperty("user.dir") + "//src//test//java//resources//PartialUpdateReqBody.json");
          PartialUpdatingUserReqBody = Files.readAllBytes(file_partialupdateuser.toPath());
 		apipatchresponse = requestContext.patch(input.get("Url")+"/booking/"+String.valueOf(BookingID), requestOptions
