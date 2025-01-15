@@ -1,0 +1,17 @@
+[
+{
+"Url":"https://restful-booker.herokuapp.com",
+"firstname":"Youssef",
+"lastname":"Sewalm",
+"totalprice":169,
+"depositpaid":true,
+"bookingdates":{
+          "checkin":"2025-01-01",
+          "checkout":"2025-01-13"
+		  },
+"additionalneeds":"Pizza",
+"firstnameupdate":"Ahmed",
+"lastnameupdate":"Ali"
+}
+]
+
